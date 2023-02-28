@@ -1,0 +1,24 @@
+/* Global Stylling */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat: 100, 200, 300, 400, 500, 600, 700 | Roboto: 100, 200, 300, 400, 500, 600, 700');
+
+html, body {
+    /* Dissable horizantal scroll */
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
+    overflow: hidden;
+
+    background-color: blue;
+}
+
+.logo {
+    background: url(../images/Photo\ PJ.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 360px;
+    transition: .5s, ease-in-out;
+    -moz-transition: .5s, ease-in-out;
+    -webkit-transition: .5s, ease-in-out;
+
+
+}
