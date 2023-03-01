@@ -1,5 +1,5 @@
-/* Global Stylling */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat: 100, 200, 300, 400, 500, 600, 700 | Roboto: 100, 200, 300, 400, 500, 600, 700');
+/* -------------------------------Global Stylling */
+@import url('https://fonts.googleapis.com/css2?family=Exo: 100, 200, 300, 400, 500, 600, 700 | Roboto: 100, 200, 300, 400, 500, 600, 700');
 
 html, body {
     /* Dissable horizantal scroll */
@@ -11,6 +11,12 @@ html, body {
     background-color: blue;
 }
 
+.bg-color-name-title {
+    background-color: #676767;
+}
+
+/* ----------------------------Heading */
+
 .logo {
     background: url(../images/Photo\ PJ.jpg);
     background-position: center;
@@ -19,6 +25,25 @@ html, body {
     transition: .5s, ease-in-out;
     -moz-transition: .5s, ease-in-out;
     -webkit-transition: .5s, ease-in-out;
+}
 
+.heading {
+    margin-left: 50px;
+}
 
+.name {
+    font-family: "Exo", sans-serif;
+    font-weight: 100;
+    font-size: 46px;
+    margin-top: 50px;
+    color: #fff;
+}
+
+.title {
+    font-family: "Roboto", sans-serif;
+    font-weight: 200;
+    font-size: 28px;
+    margin-top: 20px;
+    margin-bottom: 90px;
+    color: #fff;
 }
