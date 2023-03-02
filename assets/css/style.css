@@ -34,6 +34,9 @@ body, footer {
     background-color: #fff;
 }
 
+.bg-color-personal-info {
+    background-color: #f4f4f4;
+}
 /* ----------------------------Special padding/margins.text */
 
 h1,
