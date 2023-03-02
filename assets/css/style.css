@@ -233,3 +233,39 @@ footer {
 .three-reasons-heading {
     margin-bottom: 15px;
 }
+
+/* ----------------------------Personal info */
+
+.person-info-item {
+    margin-bottom: 20px;
+    display: block;
+    clear: both;
+}
+
+.person-info-item .key,
+.person-info-item .value {
+    padding: 8px;
+    display: inline-block;
+}
+
+.person-info-item .key p,
+.person-info-item .value p {
+    margin: 0;
+}
+
+.person-info-item .key {
+    width: 30%;
+    margin-right: 21px;
+    padding-top: 2px;
+    vertical-align: top;  
+}
+
+.person-info-item .key p {
+    font-weight: 700;
+}
+
+.person-info-item .value { 
+    position: relative;
+    width: 60%;
+
+}
