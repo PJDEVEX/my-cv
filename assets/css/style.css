@@ -42,6 +42,14 @@ body, footer {
     background-color: #3498db;
 }
 
+.ui-menu-color-interests {
+    background-color: #da5838;
+}
+
+.ui-menu-color-github {
+    background-color: #0e1d72;
+}
+
 .ui-menu-color-downloadcv {
     background-color: #525252;
 }
@@ -377,6 +385,5 @@ button[type="submit"] {
         margin: 0 auto;
         max-width: 70%;
         max-width: 50%;
-        ,ax
     }
 }
