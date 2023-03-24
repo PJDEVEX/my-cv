@@ -7,19 +7,21 @@ function initMap() {
     });
 }
 
-    var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-    var locations = [
-      { lat: 40.785091, lng: -73.968285 },
-      { lat: 40.748817, lng: -73.985428 },
-      { lat: 40.731858, lng: -74.002347 }
-    ];
-    var markers = locations.map(function(location, i) {
-      return new google.maps.Marker({
-        position: location,
-        label: labels[i % labels.length],
-      });
+function addMarkersToMap(map) {
+  var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  var locations = [
+    { lat: 40.785091, lng: -73.968285 },
+    { lat: 40.748817, lng: -73.985428 },
+    { lat: 40.731858, lng: -74.002347 }
+  ];
+  var markers = locations.map(function(location, i) {
+    return new google.maps.Marker({
+      position: location,
+      label: labels[i % labels.length],
+      map: map
     });
-    var markerCluster = new MarkerClusterer(map, markers,
-      {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
-
+  });
+  var markerCluster = new MarkerClusterer(map, markers,
+    {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
+}
   
