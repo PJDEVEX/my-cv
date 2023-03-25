@@ -19,6 +19,14 @@
         type="text/css">
     <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
     <title>CV-PJ, Aspiring Web3-Defi developer</title>
+    <!-- Initializes the EmailJS library with a unique API key. -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init("J27m1sI1uPPV2QjaE");
+        })();
+    </script>
 </head>
 
 <body>
@@ -64,8 +72,8 @@
                             </li>
 
                             <li class="col-4 col-sm-2 list-inline-item ui-menu-color-downloadcv menuitem">
-                                <a href="assets/cv/CV - PJ.pdf" class="hvr-sweep-to-bottom" target="_blank"><i class="fa fa-download"
-                                        aria-hidden="true"></i><span>Download
+                                <a href="assets/cv/CV - PJ.pdf" class="hvr-sweep-to-bottom" target="_blank"><i
+                                        class="fa fa-download" aria-hidden="true"></i><span>Download
                                         CV</span></a>
                             </li>
                         </ul>
@@ -82,7 +90,9 @@
                 <h5 class="uppercase text-center">Let's work together</h5>
 
                 <div class="center-form">
-                    <form>
+
+                    <!-- HTML form triggers function sendMail() when submitted -->
+                    <form onsubmit="return sendMail(this);">
                         <input type="text" name="name" id="fullname" class="form-control" placeholder="Name" required>
                         <input type="email" name="email" id="emailaddress" class="form-control" placeholder="Email"
                             required>
@@ -109,7 +119,8 @@
             <div class="col-sm-4">
                 <h5 class="uppercase general-sub">Download</h5>
                 <p class="inline-block">Need a printable version of my CV? Download it here...
-                    <a href="assets/cv/CV - PJ.pdf" target="_blank" class="cv-pdf"><i class="fa fa-download" aria-hidden="true"></i>
+                    <a href="assets/cv/CV - PJ.pdf" target="_blank" class="cv-pdf"><i class="fa fa-download"
+                            aria-hidden="true"></i>
                         <!-- Span is to assist screen readers as only a icon there for downloanding -->
                         <span class="sr-only">Download Link.</span>
                     </a>
@@ -159,6 +170,8 @@
             </div>
         </div>
     </footer>
+    <!-- Link send email js file -->
+    <script src="assets/js/sendEmail.js"></script>
 
 </body>
 

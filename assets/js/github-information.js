@@ -31,6 +31,19 @@ function userInformationHTML(user) {
         </div>`;
 }
 
+
+/**
+ * This function takes an array of repositories 
+ * and generates HTML code to display 
+ * the list of repositories on the webpage.
+ * If the input array is empty, 
+ * it returns a message indicating 
+ * that there are no repositories to display.
+ * If the input array is not empty, 
+ * it generates an HTML unordered 
+ * list of repositories with links to their GitHub page.
+ * The function returns the HTML code as a string.
+ */
 function repoInformationHTML(repos) {
     if (repos.length == 0) {
         return `<div class="clearfix repo-list">No repos!</div>`;
@@ -77,8 +90,8 @@ function fetchGitHubInformation(event) {
     /**
      * fix the bug so that empty the text box and repos
      */
-    $("#gh-user-data").data("");
-    $("#gh-repo-data").data("");
+    $("#gh-user-data").empty();
+    $("#gh-repo-data").empty();
 
     var username = $("#gh-username").val();
     if (!username) {
@@ -91,19 +104,22 @@ function fetchGitHubInformation(event) {
         </div>`
     );
     $.when(
-        $.getJSON(`https://api.github.com/user/${username}`),
-        $.getJSON(`https://api.github.com/user/${username}/repos`)
-
+        $.getJSON(`https://api.github.com/users/${username}`),
+        $.getJSON(`https://api.github.com/users/${username}/repos`)
     ).then(
         function(firstResponse, secondResponse) {
             var userData = firstResponse[0];
             var repoData = secondResponse[0];
             $("#gh-user-data").html(userInformationHTML(userData));
-            $("#gh-repo-data").html(userInformationHTML(repoData));
+            $("#gh-repo-data").html(repoInformationHTML(repoData));
         },
         function(erroResponse) {
             if (erroResponse.status === 404) {
-                $("#gh-user-data").html(`<h2>No info found for user ${username}</h2>`);
+                $("#gh-user-data").html(
+                    `<h2>No info found for user ${username}</h2>`);
+            } else if (erroResponse.status === 403) {
+                var resetTime = new Date(erroResponse.getResponseHeader('X-RateLimit-Reset')*1000);
+                $("#gh-user-data").html(`<h4>Too many requests, please wait until ${resetTime.toLocaleTimeString()}</h4>`);
             } else {
                 console.log(erroResponse);
                 $("#gh-user-data").html(`<h2>Error: ${erroResponse.responseJSON.message}</h2>`);
