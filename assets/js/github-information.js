@@ -53,15 +53,33 @@ function repoInformationHTML(repos) {
 }
 
 /**
-
-Function fetches the GitHub user information,
-using the username entered in the input field.
-If the username is not entered, it displays an error message.
-It also displays a loading spinner while fetching the data.
-It uses jQuery's $.when() and .then() methods to make an AJAX request
-to the GitHub API and handle success and error responses.
+ * This function is used to fetch user and repository
+ * information from the GitHub API and display it on 
+ * the webpage.
+ * @param {Event} event - The event that triggered 
+ * the function call.
+ * The function does the following:
+ * * Gets the GitHub username entered by the user
+ *  in the input field.
+ * * If the username is not entered, it displays 
+ * a message asking the user to enter a username.
+ * * Displays a loader image while the information 
+ * is being fetched from the GitHub API.
+ * * Makes two API calls to retrieve user and 
+ * repository information for the entered username.
+ * * If both the API calls are successful, 
+ * it retrieves the user and repository data and 
+ * displays it on the page.
+ * * If there is an error in fetching the data, 
+ * it displays an appropriate error message on the page.
 */
 function fetchGitHubInformation(event) {
+    /**
+     * fix the bug so that empty the text box and repos
+     */
+    $("#gh-user-data").data("");
+    $("#gh-repo-data").data("");
+
     var username = $("#gh-username").val();
     if (!username) {
         $("#gh-user-data").html(`<h2>Please enter a GitHub username</h2>`);
@@ -93,3 +111,7 @@ function fetchGitHubInformation(event) {
         }
     );
 }
+
+// Default loading of octocat profile
+// when loading the page
+$(document).ready(fetchGitHubInformation);

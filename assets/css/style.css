@@ -1,7 +1,8 @@
 /* -------------------------------Global Stylling */
 @import url('https://fonts.googleapis.com/css2?family=Exo: 100, 200, 300, 400, 500, 600, 700 | Roboto: 100, 200, 300, 400, 500, 600, 700');
 
-body, footer {
+body,
+footer {
     /* Dissable horizantal scroll */
     margin: 0;
     padding: 0;
@@ -94,6 +95,7 @@ h4 {
     margin-top: 25px;
     margin-bottom: 40px;
 }
+
 /* ----------------------------Heading */
 
 .logo {
@@ -195,7 +197,7 @@ after changing the menu-container to 0 */
 
 /* ----------------------------Footer */
 
-footer { 
+footer {
     background-color: #525252;
     color: #fafafa;
     min-height: 120px;
@@ -233,7 +235,7 @@ footer {
     -o-transition: all 0.35s ease-in-out;
 }
 
-.social-links li a i:hover{
+.social-links li a i:hover {
     background: #e84610;
 }
 
@@ -275,14 +277,14 @@ footer {
     width: 30%;
     margin-right: 21px;
     padding-top: 2px;
-    vertical-align: top;  
+    vertical-align: top;
 }
 
 .person-info-item .key p {
     font-weight: 700;
 }
 
-.person-info-item .value { 
+.person-info-item .value {
     position: relative;
     width: 60%;
 
@@ -368,6 +370,7 @@ footer {
     padding-top: 10px;
     margin: 0 auto;
     max-width: 70%;
+    min-height: 200px;
 }
 
 button[type="submit"] {
